@@ -1,0 +1,1 @@
+export const basePrefixCls = 's';

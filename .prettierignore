@@ -5,3 +5,7 @@ package.json
 .umi
 .umi-production
 .umi-test
+
+src/style/color/bezierEasing.less
+src/style/color/colorPalette.less
+src/style/color/tinyColor.less

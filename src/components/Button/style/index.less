@@ -1,0 +1,14 @@
+@import '../../../style/theme/default.less';
+@import './mixin.less';
+
+@btn-prefix-cls: ~'@{s-prefix}-btn';
+
+.@{btn-prefix-cls} {
+  line-height: @btn-line-height;
+  .btn();
+  .btn-default();
+
+  &-primary {
+    .btn-primary();
+  }
+}

@@ -7,10 +7,7 @@ export default defineConfig({
   favicon: '/logo.svg',
   logo: '/logo.svg',
   dynamicImport: {}, // 是否启用按需加载
-  navs: [
-    { title: '设计', path: '/introduce' },
-    { title: 'GitHub', path: 'https://github.com/18355166248' },
-  ],
+  navs: [null, { title: 'GitHub', path: 'https://github.com/18355166248' }],
   outputPath: 'docs-dist',
   alias: {
     '@': join(__dirname, 'src'),

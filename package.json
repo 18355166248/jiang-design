@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "jiang-design",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -11,7 +11,9 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "prepare": "husky install",
+    "preinstall": "npx only-allow pnpm"
   },
   "files": [
     "dist"
@@ -30,7 +32,9 @@
     ]
   },
   "dependencies": {
-    "react": "^18.0.0"
+    "classnames": "^2.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
