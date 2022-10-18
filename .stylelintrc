@@ -1,0 +1,5 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "plugins": ["stylelint-declaration-block-no-ignored-properties"],
+  "rules": {}
+}
