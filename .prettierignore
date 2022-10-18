@@ -9,3 +9,7 @@ package.json
 src/style/color/bezierEasing.less
 src/style/color/colorPalette.less
 src/style/color/tinyColor.less
+
+dist/esm/style/color/bezierEasing.less
+dist/esm/style/color/colorPalette.less
+dist/esm/style/color/tinyColor.less

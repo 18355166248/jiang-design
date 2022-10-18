@@ -6,56 +6,12 @@
 2. 如果报错不能使用 jsx，则需要 tsconfig.compilerOptions 中配置"jsx": "react"
 3. 如果使用 document 的地方报错找不到名称“document”，则需要配置"lib": ["esnext", "DOM"]
 
-```js
-// bin/build.js
-// node包，commonjs规范
-const path = require('path')
-const { defineConfig, build } = require('vite')
-const vue = require('@vitejs/plugin-vue')
-const vueJsx = require('@vitejs/plugin-vue-jsx')
+## father 4.X 打包问题
 
-// 打包的入口文件
-const entryDir = path.resolve(__dirname, '../packages')
-// 出口文件夹
-const outDir = path.resolve(__dirname, '../lib')
-// vite基础配置
-const baseConfig = defineConfig({
-  configFile: false,
-  publicDir: false,
-  plugins: [vue(), vueJsx()]
-})
-// rollup配置
-const rollupOptions = {
-  // 确保外部化处理那些你不想打包进库的依赖
-  external: [
-    'vue'
-  ],
-  output: {
-    // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
-    global: [
-      vue: 'Vue'
-    ]
-  }
-}
-// 全量打包构建
-const buildAll = async () => {
-  await build({
-    ...baseConfig,
-    build: {
-      rollupOptions,
-      lib: {
-        entry: path.resolve(entryDir, 'index.ts'),
-        name: '', // umd的变量名
-        fileName: (format) => `index.${format}.js`, // 输出文件名
-        formats: ['es', 'umd'],
-      },
-      outDir
-    }
-  })
-}
-const build = async () => {
-  await buildAll()
-}
-build()
+1. 4.x 版本的如何把 less 编译成 css #529
 
-```
+[作者回复](https://github.com/umijs/father/issues/529)
+
+对于 Less 之类传统预处理器，我理解把样式文件交给实际项目去编译更合适，主要原因：
+
+Bundless 不打包、没法处理样式文件的依赖，比如 a.less 和 b.less 都 @import 'pkg/es/style/index.less'，那产出的 a.css 和 b.css 如果包含依赖就有产物冗余、甚至样式冲突，如果不包含依赖就会样式丢失产出原始 Less 文件使用的项目更容易定制变量，代价是项目编译会稍增成本对于 Windi CSS 之类的原子化 CSS，我没有调研过，但它似乎更适用于 Bundle 模式而不是 Bundless
