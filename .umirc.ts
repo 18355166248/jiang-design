@@ -6,8 +6,8 @@ let BaseUrl = '/jiang-design'; // 仓库的路径
 export default defineConfig({
   title: 'jiang-design',
   mode: 'site',
-  favicon: '/logo.svg',
-  logo: '/logo.svg',
+  favicon: BaseUrl + '/logo.svg',
+  logo: BaseUrl + '/logo.svg',
   dynamicImport: {}, // 是否启用按需加载
   navs: [null, { title: 'GitHub', path: 'https://github.com/18355166248' }],
   outputPath: 'docs-dist',
@@ -15,10 +15,10 @@ export default defineConfig({
     '@': join(__dirname, 'src'),
   },
   links: [
-    { rel: 'stylesheet', href: '/common.css' },
+    { rel: 'stylesheet', href: BaseUrl + '/common.css' },
     {
       rel: 'stylesheet',
-      href: '/tailwindCss.css',
+      href: BaseUrl + '/tailwindCss.css',
     },
   ],
 
