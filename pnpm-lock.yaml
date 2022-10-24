@@ -6,6 +6,7 @@ specifiers:
   '@testing-library/jest-dom': ^5.15.1
   '@testing-library/react': ^13.0.0
   '@types/jest': ^27.0.3
+  '@types/react': ^18.0.21
   '@umijs/fabric': ^2.8.1
   '@umijs/test': ^3.0.5
   classnames: ^2.3.2
@@ -16,6 +17,7 @@ specifiers:
   husky: ^8.0.1
   lint-staged: ^10.5.4
   prettier: ^2.2.1
+  rc-select: ^14.1.13
   react: ^18.2.0
   react-dom: ^18.2.0
   stylelint: ^14.14.0
@@ -25,6 +27,7 @@ specifiers:
 
 dependencies:
   classnames: registry.npmmirror.com/classnames/2.3.2
+  rc-select: registry.npmmirror.com/rc-select/14.1.13_biqbaboplfbrettd7655fr4n2y
   react: registry.npmmirror.com/react/18.2.0
   react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
 
@@ -34,6 +37,7 @@ devDependencies:
   '@testing-library/jest-dom': registry.npmmirror.com/@testing-library/jest-dom/5.16.5
   '@testing-library/react': registry.npmmirror.com/@testing-library/react/13.4.0_biqbaboplfbrettd7655fr4n2y
   '@types/jest': registry.npmmirror.com/@types/jest/27.5.2
+  '@types/react': registry.npmmirror.com/@types/react/18.0.21
   '@umijs/fabric': registry.npmmirror.com/@umijs/fabric/2.14.0
   '@umijs/test': registry.npmmirror.com/@umijs/test/3.5.34
   dumi: registry.npmmirror.com/dumi/1.1.48_biqbaboplfbrettd7655fr4n2y
@@ -1831,7 +1835,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: registry.npmmirror.com/regenerator-runtime/0.13.10
-    dev: true
 
   registry.npmmirror.com/@babel/template/7.18.10:
     resolution: {integrity: sha512-TI+rCtooWHr3QJ27kJxfjutghu44DLnasDMwpDqCXVTal9RLp3RSYNh4NdBrRP2cQAoG9A8juOQl6P6oZG4JxA==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/@babel/template/-/template-7.18.10.tgz}
@@ -3493,7 +3496,7 @@ packages:
     version: 5.0.6
     dependencies:
       '@types/history': registry.npmmirror.com/@types/history/4.7.11
-      '@types/react': registry.npmmirror.com/@types/react/16.14.32
+      '@types/react': registry.npmmirror.com/@types/react/18.0.21
       '@types/react-router': registry.npmmirror.com/@types/react-router/5.1.19
     dev: true
 
@@ -6919,7 +6922,6 @@ packages:
     resolution: {integrity: sha512-Gj9hZN3a07cbR6zviMUBOMPdWxYhbMI+x+WS0NAIu2zFZmbK8ys9R79g+iG9qLnlCwpFoaB+fKy8Pdv470GsPA==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/dom-align/-/dom-align-1.12.3.tgz}
     name: dom-align
     version: 1.12.3
-    dev: true
 
   registry.npmmirror.com/dom-serializer/0.2.2:
     resolution: {integrity: sha512-2/xPb3ORsQ42nHYiSunXkDjPLBaEj/xTwUO4B7XCZQTRk7EBtTOPaygh10YAAh2OI1Qrp6NWfpAhzswj0ydt9g==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/dom-serializer/-/dom-serializer-0.2.2.tgz}
@@ -11691,7 +11693,6 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz}
     name: lodash
     version: 4.17.21
-    dev: true
 
   registry.npmmirror.com/log-symbols/2.2.0:
     resolution: {integrity: sha512-VeIAFslyIerEJLXHziedo2basKbMKtTw3vfn5IzG0XTjhAVEJyNHnL2p7vc+wBDSdQuUpNw3M2u6xb9QsAY5Eg==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/log-symbols/-/log-symbols-2.2.0.tgz}
@@ -14860,7 +14861,6 @@ packages:
       react: registry.npmmirror.com/react/18.2.0
       react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
       resize-observer-polyfill: registry.npmmirror.com/resize-observer-polyfill/1.5.1
-    dev: true
 
   registry.npmmirror.com/rc-dropdown/4.0.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-OdpXuOcme1rm45cR0Jzgfl1otzmU4vuBVb+etXM8vcaULGokAKVpKlw8p6xzspG7jGd/XxShvq+N3VNEfk/l5g==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/rc-dropdown/-/rc-dropdown-4.0.1.tgz}
@@ -14913,7 +14913,6 @@ packages:
       rc-util: registry.npmmirror.com/rc-util/5.24.4_biqbaboplfbrettd7655fr4n2y
       react: registry.npmmirror.com/react/18.2.0
       react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
-    dev: true
 
   registry.npmmirror.com/rc-overflow/1.2.8_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-QJ0UItckWPQ37ZL1dMEBAdY1dhfTXFL9k6oTTcyydVwoUNMnMqCGqnRNA98axSr/OeDKqR6DVFyi8eA5RQI/uQ==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/rc-overflow/-/rc-overflow-1.2.8.tgz}
@@ -14930,7 +14929,6 @@ packages:
       rc-util: registry.npmmirror.com/rc-util/5.24.4_biqbaboplfbrettd7655fr4n2y
       react: registry.npmmirror.com/react/18.2.0
       react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
-    dev: true
 
   registry.npmmirror.com/rc-resize-observer/1.2.0_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-6W+UzT3PyDM0wVCEHfoW3qTHPTvbdSgiA43buiy8PzmeMnfgnDeb9NjdimMXMl3/TcrvvWl5RRVdp+NqcR47pQ==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/rc-resize-observer/-/rc-resize-observer-1.2.0.tgz}
@@ -14947,7 +14945,27 @@ packages:
       react: registry.npmmirror.com/react/18.2.0
       react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
       resize-observer-polyfill: registry.npmmirror.com/resize-observer-polyfill/1.5.1
-    dev: true
+
+  registry.npmmirror.com/rc-select/14.1.13_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-WMEsC3gTwA1dbzWOdVIXDmWyidYNLq68AwvvUlRROw790uGUly0/vmqDozXrIr0QvN/A3CEULx12o+WtLCAefg==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/rc-select/-/rc-select-14.1.13.tgz}
+    id: registry.npmmirror.com/rc-select/14.1.13
+    name: rc-select
+    version: 14.1.13
+    engines: {node: '>=8.x'}
+    peerDependencies:
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.19.4
+      classnames: registry.npmmirror.com/classnames/2.3.2
+      rc-motion: registry.npmmirror.com/rc-motion/2.6.2_biqbaboplfbrettd7655fr4n2y
+      rc-overflow: registry.npmmirror.com/rc-overflow/1.2.8_biqbaboplfbrettd7655fr4n2y
+      rc-trigger: registry.npmmirror.com/rc-trigger/5.3.1_biqbaboplfbrettd7655fr4n2y
+      rc-util: registry.npmmirror.com/rc-util/5.24.4_biqbaboplfbrettd7655fr4n2y
+      rc-virtual-list: registry.npmmirror.com/rc-virtual-list/3.4.10_biqbaboplfbrettd7655fr4n2y
+      react: registry.npmmirror.com/react/18.2.0
+      react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
+    dev: false
 
   registry.npmmirror.com/rc-tabs/11.16.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-bR7Dap23YyfzZQwtKomhiFEFzZuE7WaKWo+ypNRSGB9PDKSc6tM12VP8LWYkvmmQHthgwP0WRN8nFbSJWuqLYw==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/rc-tabs/-/rc-tabs-11.16.1.tgz}
@@ -15005,7 +15023,6 @@ packages:
       rc-util: registry.npmmirror.com/rc-util/5.24.4_biqbaboplfbrettd7655fr4n2y
       react: registry.npmmirror.com/react/18.2.0
       react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
-    dev: true
 
   registry.npmmirror.com/rc-util/5.24.4_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-2a4RQnycV9eV7lVZPEJ7QwJRPlZNc06J7CwcwZo4vIHr3PfUqtYgl1EkUV9ETAc6VRRi8XZOMFhYG63whlIC9Q==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/rc-util/-/rc-util-5.24.4.tgz}
@@ -15021,7 +15038,6 @@ packages:
       react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
       react-is: registry.npmmirror.com/react-is/16.13.1
       shallowequal: registry.npmmirror.com/shallowequal/1.1.0
-    dev: true
 
   registry.npmmirror.com/rc-virtual-list/3.4.10_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-Jv0cgJxJ+8F/YViW8WGs/jQF2rmT8RUcJ5uDJs5MOFLTYLAvCpM/xU+Zu6EpCun50fmovhXiItQctcfE2UY3Aw==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/rc-virtual-list/-/rc-virtual-list-3.4.10.tgz}
@@ -15038,7 +15054,6 @@ packages:
       rc-util: registry.npmmirror.com/rc-util/5.24.4_biqbaboplfbrettd7655fr4n2y
       react: registry.npmmirror.com/react/18.2.0
       react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
-    dev: true
 
   registry.npmmirror.com/rc/1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/rc/-/rc-1.2.8.tgz}
@@ -15116,7 +15131,6 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/react-is/-/react-is-16.13.1.tgz}
     name: react-is
     version: 16.13.1
-    dev: true
 
   registry.npmmirror.com/react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/react-is/-/react-is-17.0.2.tgz}
@@ -15399,7 +15413,6 @@ packages:
     resolution: {integrity: sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/regenerator-runtime/-/regenerator-runtime-0.13.10.tgz}
     name: regenerator-runtime
     version: 0.13.10
-    dev: true
 
   registry.npmmirror.com/regenerator-runtime/0.13.5:
     resolution: {integrity: sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz}
@@ -15692,7 +15705,6 @@ packages:
     resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz}
     name: resize-observer-polyfill
     version: 1.5.1
-    dev: true
 
   registry.npmmirror.com/resolve-cwd/3.0.0:
     resolution: {integrity: sha512-OrZaX2Mb+rJCpH/6CpSqt9xFVpN++x01XnN2ie9g6P5/3xelLAkXWVADpdz1IHD/KFfEXyE6V0U01OQ3UO2rEg==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/resolve-cwd/-/resolve-cwd-3.0.0.tgz}
@@ -16133,7 +16145,6 @@ packages:
     resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/shallowequal/-/shallowequal-1.1.0.tgz}
     name: shallowequal
     version: 1.1.0
-    dev: true
 
   registry.npmmirror.com/shebang-command/1.2.0:
     resolution: {integrity: sha512-EV3L1+UQWGor21OmnvojK36mhg+TyIKDh3iFBKBohr5xeXIhNBcx8oWdgkTEEQ+BEFFYdLRuqMfd5L84N1V5Vg==, registry: http://xnpm.ximalaya.com/, tarball: https://registry.npmmirror.com/shebang-command/-/shebang-command-1.2.0.tgz}
