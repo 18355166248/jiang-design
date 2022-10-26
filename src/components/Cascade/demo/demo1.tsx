@@ -4,7 +4,8 @@
  * hideActions: ["CSB"]
  */
 import React, { useState } from 'react';
-import { Cascade } from 'jiang-design';
+import { Cascade, ConfigProvider } from 'jiang-design';
+import '../style/index.less';
 
 const addressOptions = [
   {

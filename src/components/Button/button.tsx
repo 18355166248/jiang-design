@@ -1,9 +1,8 @@
 import React, { createRef, forwardRef } from 'react';
 import { tuple } from '../../_utils/type';
-import type { SizeType } from '../../config-provider/SizeContext';
+import type { SizeType } from '../config-provider/SizeContext';
 import classNames from 'classnames';
-import { ConfigContext } from '../../config-provider/ConfigContext';
-import './style/index.less';
+import { ConfigContext } from '../config-provider/ConfigContext';
 
 const ButtonTypes = tuple('default', 'primary', 'ghost', 'dashed', 'link', 'text');
 const ButtonHTMLTypes = tuple('submit', 'button', 'reset');

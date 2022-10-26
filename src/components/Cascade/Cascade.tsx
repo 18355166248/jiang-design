@@ -1,7 +1,7 @@
 import React from 'react';
 import type { BaseSelectRef, BaseSelectPropsWithoutPrivate } from 'rc-select';
 import { BaseSelect } from 'rc-select';
-import { ConfigContext } from '../../config-provider/ConfigContext';
+import { ConfigContext } from '../config-provider/ConfigContext';
 import CascadeContext from './context';
 import OptionList from './OptionList';
 

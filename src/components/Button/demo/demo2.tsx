@@ -5,6 +5,7 @@
  */
 import React from 'react';
 import { Button } from 'jiang-design';
+import '../style/index.less';
 
 export default () => {
   return (
