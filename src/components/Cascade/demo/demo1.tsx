@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { Cascade, ConfigProvider } from 'jiang-design';
 import '../style/index.less';
+import './index.less';
 
 const addressOptions = [
   {
@@ -75,8 +76,6 @@ export default () => {
       changeOnSelect
       expandTrigger="hover"
       loadData={() => console.log('loadData')}
-    >
-      <input placeholder="please select address" value={inputValue} readOnly />
-    </Cascade>
+    />
   );
 };

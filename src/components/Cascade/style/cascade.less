@@ -4,8 +4,40 @@
 
 .@{cascade-prefix-cls} {
   color: red;
+  // &:focus-visible {
+  //   outline: none;
+  // }
 
-  &-option {
-    position: absolute;
+  &-focused {
+    .@{cascade-prefix-cls}-selector {
+      border: 1px solid #d9d9d9 !important;
+    }
+  }
+
+  &-single {
+    &:not(.@{cascade-prefix-cls}-customize-input) {
+      .@{cascade-prefix-cls}-selector {
+        position: relative;
+        background-color: #fff;
+        border: 1px solid #d9d9d9;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        width: 100%;
+        height: 32px;
+        padding: 0 11px;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  &-show-arrow {
+    .@{cascade-prefix-cls}-arrow {
+      top: 50%;
+      right: 11px;
+      margin-top: -10px;
+    }
   }
 }
