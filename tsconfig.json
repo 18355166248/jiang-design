@@ -6,7 +6,6 @@
     "jsx": "react",
     "esModuleInterop": true,
     "types": ["jest"],
-    "strict": true,
     "skipLibCheck": true,
     "declaration": true // 只有declaration设置为true才能生成.d.ts后缀的文件
   }

@@ -4,6 +4,16 @@ import { BaseSelect } from 'rc-select';
 import { ConfigContext } from '../config-provider/ConfigContext';
 import CascadeContext from './context';
 import OptionList from './OptionList';
+import { filterFieldNames } from './utils/commonUtils';
+
+export interface FieldNames {
+  label?: string;
+  value?: string;
+  children?: string;
+}
+export interface InternalFieldNames extends Required<FieldNames> {
+  key: string;
+}
 
 export interface BaseOptionType {
   disabled?: boolean;
@@ -32,6 +42,7 @@ interface BaseCascadeProps<OptionType extends BaseOptionType = DefaultOptionType
   children: React.ReactElement;
   value?: ValueType;
   options?: OptionType[];
+  fieldNames?: FieldNames;
 }
 
 export interface SingleCascaderProps<OptionType extends BaseOptionType = DefaultOptionType>
@@ -52,7 +63,7 @@ export type CascadeProps<OptionType extends BaseOptionType = DefaultOptionType> 
 };
 
 const Cascade = React.forwardRef<CascadeRef, CascadeProps>((props, ref) => {
-  const { value, onChange, children } = props;
+  const { value, onChange, children, options, fieldNames } = props;
 
   console.log(value, onChange, children);
 
@@ -60,7 +71,20 @@ const Cascade = React.forwardRef<CascadeRef, CascadeProps>((props, ref) => {
 
   const prefixCls = getPrefixCls('cascade');
 
-  const cascadeContext = React.useMemo(() => ({}), []);
+  const mergeOptions = React.useMemo(() => options || [], [options]);
+
+  const mergeFieldNames = React.useMemo(
+    () => filterFieldNames(fieldNames),
+    [JSON.stringify(fieldNames)],
+  );
+
+  const cascadeContext = React.useMemo(
+    () => ({
+      options: mergeOptions,
+      fieldNames: mergeFieldNames,
+    }),
+    [mergeOptions],
+  );
 
   function onDisplayValuesChange() {}
 
