@@ -1,4 +1,4 @@
-import { FieldNames, InternalFieldNames } from '../Cascade';
+import { DefaultOptionType, FieldNames, InternalFieldNames } from '../Cascade';
 
 export function filterFieldNames(fieldNames?: FieldNames): InternalFieldNames {
   const { label, value, children } = fieldNames || {};
@@ -9,4 +9,7 @@ export function filterFieldNames(fieldNames?: FieldNames): InternalFieldNames {
     key: val,
     children: children || 'children',
   };
+}
+export function isLeaf(option: DefaultOptionType, fieldName: FieldNames) {
+  return !option[fieldName.children]?.length;
 }

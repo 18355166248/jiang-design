@@ -65,7 +65,7 @@ export default () => {
   const [inputValue, setInputValue] = useState('');
 
   const onChange = (value: string, selectedOptions: any) => {
-    console.log(value, selectedOptions);
+    console.log('demo1-onChange', value, selectedOptions);
     setInputValue(selectedOptions.map((o: any) => o.label).join(', '));
   };
 
@@ -76,6 +76,18 @@ export default () => {
       changeOnSelect
       expandTrigger="hover"
       loadData={() => console.log('loadData')}
-    />
+    >
+      <div
+        style={{
+          width: 200,
+          minHeight: 30,
+          border: '1px solid #ccc',
+          padding: '2px 6px',
+        }}
+        className="flex items-center cursor-pointer"
+      >
+        {inputValue}
+      </div>
+    </Cascade>
   );
 };

@@ -5,6 +5,8 @@ import { ConfigContext } from '../config-provider/ConfigContext';
 import CascadeContext from './context';
 import OptionList from './OptionList';
 import { filterFieldNames } from './utils/commonUtils';
+import useRefFunc from './hooks/useRefFunc';
+import { toPathOptions } from './utils/treeUtils';
 
 export interface FieldNames {
   label?: string;
@@ -62,10 +64,16 @@ export type CascadeProps<OptionType extends BaseOptionType = DefaultOptionType> 
   ) => void;
 };
 
+function toRawValues(value: ValueType): SingleValueType[] {
+  if (!value) return [];
+
+  return (value.length === 0 ? [] : [value]).map((val) =>
+    Array.isArray(val) ? val : [val],
+  ) as SingleValueType[];
+}
+
 const Cascade = React.forwardRef<CascadeRef, CascadeProps>((props, ref) => {
   const { value, onChange, children, options, fieldNames } = props;
-
-  console.log(value, onChange, children);
 
   const { getPrefixCls } = React.useContext(ConfigContext);
 
@@ -82,9 +90,25 @@ const Cascade = React.forwardRef<CascadeRef, CascadeProps>((props, ref) => {
     () => ({
       options: mergeOptions,
       fieldNames: mergeFieldNames,
+      onSelect: onInternalSelect,
     }),
     [mergeOptions],
   );
+
+  const triggerChange = useRefFunc((valuePath: ValueType) => {
+    if (onChange) {
+      const nextRawValues = toRawValues(valuePath);
+      const valueOptions = nextRawValues.map((path) =>
+        toPathOptions(path, mergeOptions, mergeFieldNames).map((valueOpt) => valueOpt.option),
+      );
+
+      onChange(nextRawValues[0], valueOptions[0]);
+    }
+  });
+
+  function onInternalSelect(valuePath: SingleValueType) {
+    triggerChange(valuePath);
+  }
 
   function onDisplayValuesChange() {}
 

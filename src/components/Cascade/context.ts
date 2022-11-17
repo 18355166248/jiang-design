@@ -4,6 +4,7 @@ import type { CascadeProps, InternalFieldNames, SingleValueType } from './Cascad
 export interface CascadeContextProps {
   options: CascadeProps['options'];
   fieldNames: InternalFieldNames;
+  onSelect: (valuePath: SingleValueType) => void;
   values?: SingleValueType[];
 }
 
