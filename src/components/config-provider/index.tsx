@@ -29,7 +29,6 @@ const ProviderChildren: FC<ProviderChildrenProps> = (props) => {
   if (componentSize) {
     childNode = <SizeContextProvider size={componentSize}>{childNode}</SizeContextProvider>;
   }
-  console.log(';childNode', childNode);
   return (
     <ConfigContext.Provider
       value={{
@@ -44,7 +43,6 @@ const ProviderChildren: FC<ProviderChildrenProps> = (props) => {
 const ConfigProvider: FC<ConfigProviderProps> & {
   ConfigContext: typeof ConfigContext;
 } = (props) => {
-  console.log(11, props);
   return (
     <ConfigConsumer>
       {(context) => <ProviderChildren parentContext={context} {...props} />}
@@ -52,7 +50,6 @@ const ConfigProvider: FC<ConfigProviderProps> & {
   );
 };
 
-console.log(2222);
 ConfigProvider.ConfigContext = ConfigContext;
 
 export default ConfigProvider;

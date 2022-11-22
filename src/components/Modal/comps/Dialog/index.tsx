@@ -16,8 +16,13 @@ const Dialog: FC<ModalPropsTypes> = (props) => {
 
   return (
     <div className={classnames(`${prefixCls}-root`)}>
-      <Mask prefixCls={prefixCls} visible={mask || open} />
-      <div className={classnames(`${prefixCls}-wrap`)} onClick={onWrapClick} ref={wrapperRef}>
+      <Mask prefixCls={prefixCls} visible={open} mask={mask} />
+      <div
+        className={classnames(`${prefixCls}-wrap`)}
+        onClick={onWrapClick}
+        ref={wrapperRef}
+        style={{ display: open ? null : 'none' }}
+      >
         {/* 因为 prefixCls 有默认值 所以需要单独传递 */}
         <Content {...props} prefixCls={prefixCls} />
       </div>

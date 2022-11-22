@@ -10,6 +10,7 @@ export interface ModalPropsTypes {
   title?: string;
   children?: React.ReactNode;
   footer?: React.ReactNode;
+  destroyOnClose?: boolean;
 
   onClose?: (e: SyntheticEvent) => any;
 

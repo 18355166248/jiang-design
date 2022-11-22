@@ -1,1 +1,1 @@
-export const basePrefixCls = 's';
+export const basePrefixCls = 'j';

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { canUseDom } from '../../../utils/base';
 import { GetContainer } from '../../ModalPropTypes';
 import OrderContext from './Context';
@@ -11,6 +11,7 @@ interface PortalProps {
   open?: boolean;
   getContainer?: GetContainer | false;
   children?: React.ReactNode;
+  autoDestroy?: boolean; // 设置成 false 不会删除子元素
 }
 interface PortalRef {}
 
@@ -33,9 +34,16 @@ const getPortalContainer = (getContainer: GetContainer) => {
 };
 
 const Portal = React.forwardRef<PortalRef, PortalProps>((props, ref) => {
-  const { open, getContainer, children } = props;
+  const { open, getContainer, children, autoDestroy = true } = props;
 
   const [shouldRender, setShouldRender] = useState(open);
+
+  useEffect(() => {
+    if (autoDestroy || open) {
+      setShouldRender(open);
+    }
+  }, [open, autoDestroy]);
+
   const mergedRender = shouldRender || open;
 
   const [innerContainer] = useState<ContainerType | false>(() => getPortalContainer(getContainer));
