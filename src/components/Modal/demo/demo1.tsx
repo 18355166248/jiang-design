@@ -13,6 +13,7 @@ export default () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="common-space">
+      <div id="container"></div>
       <div className="mb-4">
         <Button type="primary" onClick={() => setIsModalOpen(true)}>
           Open Modal
@@ -29,6 +30,8 @@ export default () => {
         title="弹窗标题"
         footer={<div>弹窗底部</div>}
         onClose={() => setIsModalOpen(false)}
+        getContainer="#container"
+        destroyOnClose
       >
         <p>Some contents...</p>
         <p>Some contents...</p>

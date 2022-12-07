@@ -70,13 +70,7 @@ export default () => {
   };
 
   return (
-    <Cascade
-      options={addressOptions}
-      onChange={onChange}
-      changeOnSelect
-      expandTrigger="hover"
-      loadData={() => console.log('loadData')}
-    >
+    <Cascade options={addressOptions} onChange={onChange}>
       <div
         style={{
           width: 200,

@@ -46,7 +46,14 @@ const Portal = React.forwardRef<PortalRef, PortalProps>((props, ref) => {
 
   const mergedRender = shouldRender || open;
 
-  const [innerContainer] = useState<ContainerType | false>(() => getPortalContainer(getContainer));
+  const [innerContainer, setInnerContainer] = useState<ContainerType | false>(() =>
+    getPortalContainer(getContainer),
+  );
+
+  useEffect(() => {
+    const customizeContainer = getPortalContainer(getContainer);
+    setInnerContainer(customizeContainer);
+  });
 
   const [defaultContainer, queueCreate] = useDom(mergedRender && !innerContainer);
 
