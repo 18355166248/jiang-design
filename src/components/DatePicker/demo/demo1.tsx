@@ -6,6 +6,7 @@
 import React from 'react';
 import { DatePicker } from 'jiang-design';
 import '../style/index.less';
+import type { Moment } from 'moment';
 
 export default () => {
   const onChange = (date, dateString) => {
@@ -14,7 +15,7 @@ export default () => {
 
   return (
     <div className="common-space">
-      <DatePicker onChange={onChange} />
+      <DatePicker<Moment> onChange={onChange} />
     </div>
   );
 };

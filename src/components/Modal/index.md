@@ -1,7 +1,7 @@
 ---
 title: Modal
 nav:
-  title: 弹窗
+  title: 组件
   path: /components
 group:
   title: 通用组件

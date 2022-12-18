@@ -1,4 +1,5 @@
 import React, { FC, forwardRef, useImperativeHandle, useRef } from 'react';
+import PickerTrigger from './PickerTrigger';
 
 interface PickerSharedProps<DateType> {
   open?: boolean;
@@ -18,10 +19,18 @@ export type PickerProps<DateType> = PickerBaseProps<DateType> | PickerDateProps<
 interface PickerRefConfig {}
 
 function InnerPicker<DateType>(props: PickerProps<DateType>) {
-  const { open, onChange, pickerRef } = props;
+  const { open, onChange, pickerRef, prefixCls } = props;
 
-  return <div></div>;
+  return (
+    <PickerTrigger
+      visible={open}
+      prefixCls={prefixCls}
+      children={undefined}
+      popupElement={undefined}
+    ></PickerTrigger>
+  );
 }
+````;
 
 class Picker<DateType> extends React.Component<PickerProps<DateType>> {
   pickerRef = React.createRef<PickerRefConfig>();
