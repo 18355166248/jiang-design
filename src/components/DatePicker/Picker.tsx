@@ -1,7 +1,12 @@
 import React, { FC, forwardRef, useImperativeHandle, useRef } from 'react';
 import PickerTrigger from './PickerTrigger';
+import classnames from 'classnames';
+import PickerPanel from './PickerPanel';
+import useMergedState from '../../hooks/useMergedState';
 
 interface PickerSharedProps<DateType> {
+  prefixCls?: string;
+  disabled?: boolean;
   open?: boolean;
 
   // Events
@@ -19,18 +24,75 @@ export type PickerProps<DateType> = PickerBaseProps<DateType> | PickerDateProps<
 interface PickerRefConfig {}
 
 function InnerPicker<DateType>(props: PickerProps<DateType>) {
-  const { open, onChange, pickerRef, prefixCls } = props;
+  const { open, onChange, pickerRef, prefixCls = 'j-picker', disabled } = props;
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const [mergedOpen, triggerInnerOpen] = useMergedState(false, {
+    value: open,
+    postState: (postOpen) => (disabled ? false : postOpen),
+  });
+
+  const panelProps = {
+    ...props,
+    onChange: null,
+  };
+
+  const panelNode: React.ReactNode = (
+    <div className={`${prefixCls}-panel-layout`}>
+      <PickerPanel {...panelProps} />
+    </div>
+  );
+
+  const panel = <div className={`${prefixCls}-panel-container`}>{panelNode}</div>;
+
+  // input 的props
+  const mergedInputProps = {
+    disabled,
+    ref: inputRef,
+    onBlur: () => {
+      console.log('blur');
+      triggerOpen(false);
+    },
+  };
+
+  const inputNode: React.ReactNode = <input {...mergedInputProps} />;
+
+  const triggerOpen = (newOpen: boolean) => {
+    if (disabled) {
+      return;
+    }
+
+    triggerInnerOpen(newOpen);
+  };
+
+  const onInternalClick: React.MouseEventHandler<HTMLDivElement> = (...args) => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+      triggerOpen(true);
+    }
+  };
+
+  console.log('mergedOpen', mergedOpen);
 
   return (
     <PickerTrigger
-      visible={open}
+      visible={mergedOpen}
       prefixCls={prefixCls}
-      children={undefined}
-      popupElement={undefined}
-    ></PickerTrigger>
+      popupElement={panel}
+      popupPlacement="bottomLeft"
+    >
+      <div
+        className={classnames(prefixCls, {
+          [`${prefixCls}-disabled`]: disabled,
+        })}
+        onClick={onInternalClick}
+      >
+        <div className={classnames(`${prefixCls}-input`)}>{inputNode}</div>
+      </div>
+    </PickerTrigger>
   );
 }
-````;
 
 class Picker<DateType> extends React.Component<PickerProps<DateType>> {
   pickerRef = React.createRef<PickerRefConfig>();

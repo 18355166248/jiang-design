@@ -6,3 +6,5 @@ export { default as Cascade } from './components/Cascade';
 export { default as Modal } from './components/Modal';
 
 export { default as ConfigProvider } from './components/config-provider';
+
+export { default as DatePicker } from './components/DatePicker';

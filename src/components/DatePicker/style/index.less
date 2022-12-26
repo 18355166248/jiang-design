@@ -3,4 +3,27 @@
 @picker-prefix-cls: ~'@{s-prefix}-picker';
 
 .@{picker-prefix-cls} {
+  border: 1px solid #ccc;
+
+  &-dropdown {
+    position: absolute;
+
+    &-hidden {
+      display: none;
+    }
+  }
+
+  &-input {
+    > input {
+      width: 100%;
+    }
+  }
+
+  &-panel {
+    &-container {
+    }
+
+    &-layout {
+    }
+  }
 }
