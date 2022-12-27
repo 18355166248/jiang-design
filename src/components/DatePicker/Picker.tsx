@@ -3,8 +3,11 @@ import PickerTrigger from './PickerTrigger';
 import classnames from 'classnames';
 import PickerPanel from './PickerPanel';
 import useMergedState from '../../hooks/useMergedState';
+import { GenerateConfig } from './genetate';
 
 interface PickerSharedProps<DateType> {
+  generateConfig: GenerateConfig<DateType>;
+
   prefixCls?: string;
   disabled?: boolean;
   open?: boolean;
@@ -24,7 +27,7 @@ export type PickerProps<DateType> = PickerBaseProps<DateType> | PickerDateProps<
 interface PickerRefConfig {}
 
 function InnerPicker<DateType>(props: PickerProps<DateType>) {
-  const { open, onChange, pickerRef, prefixCls = 'j-picker', disabled } = props;
+  const { open, onChange, pickerRef, prefixCls = 'j-picker', disabled, generateConfig } = props;
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -40,7 +43,7 @@ function InnerPicker<DateType>(props: PickerProps<DateType>) {
 
   const panelNode: React.ReactNode = (
     <div className={`${prefixCls}-panel-layout`}>
-      <PickerPanel {...panelProps} />
+      <PickerPanel {...panelProps} prefixCls={prefixCls} generateConfig={generateConfig} />
     </div>
   );
 

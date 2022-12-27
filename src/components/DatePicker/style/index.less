@@ -3,8 +3,6 @@
 @picker-prefix-cls: ~'@{s-prefix}-picker';
 
 .@{picker-prefix-cls} {
-  border: 1px solid #ccc;
-
   &-dropdown {
     position: absolute;
 
@@ -14,16 +12,53 @@
   }
 
   &-input {
+    border: 1px solid #ccc;
     > input {
       width: 100%;
     }
   }
 
   &-panel {
+    padding: 4px 8px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
     &-container {
+      background-color: #fff;
     }
 
     &-layout {
+    }
+  }
+
+  &-date {
+    &-panel {
+      .@{picker-prefix-cls}-body {
+        .@{picker-prefix-cls}-content {
+          tbody {
+            td {
+              width: 24px;
+              text-align: center;
+              font-size: 13px;
+              color: #aaa;
+              cursor: pointer;
+              &:hover {
+                background-color: #ccc;
+              }
+              &.not-month {
+                color: #ccc;
+              }
+            }
+
+            .@{picker-prefix-cls}-cell {
+              &-in-view {
+                color: #333;
+              }
+              &-today {
+                border: 1px solid @primary-color;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

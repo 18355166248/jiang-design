@@ -25,4 +25,19 @@ export type GenerateConfig<DateType> = {
   // Compare
   isAfter: (date1: DateType, date2: DateType) => boolean;
   isValidate: (date: DateType) => boolean;
+  locale: {
+    getWeekFirstDay: (locale: string) => number;
+    getWeekFirstDate: (locale: string, value: DateType) => DateType;
+    getWeek: (locale: string, value: DateType) => number;
+
+    format: (locale: string, date: DateType, format: string) => string;
+
+    /** Should only return validate date instance */
+    parse: (locale: string, text: string, formats: string[]) => DateType | null;
+
+    /** A proxy for getting locale with moment or other locale library */
+    getShortWeekDays?: (locale: string) => string[];
+    /** A proxy for getting locale with moment or other locale library */
+    getShortMonths?: (locale: string) => string[];
+  };
 };

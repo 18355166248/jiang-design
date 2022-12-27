@@ -13,7 +13,7 @@ function DatePanel<DateType>(props: DateTypeProps<DateType>) {
   return (
     <div className={panelPrefixCls}>
       <DateHeader />
-      <DateBody />
+      <DateBody {...props} />
     </div>
   );
 }
